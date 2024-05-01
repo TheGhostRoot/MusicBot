@@ -20,3 +20,8 @@ jobs:
           cache: maven
       - name: Build and Test with Maven
         run: mvn --batch-mode --update-snapshots verify
+      - name: Upload Plugin jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: JMusicBot
+          path: target/*.jar
